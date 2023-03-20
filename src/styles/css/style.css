@@ -1,0 +1,128 @@
+/* kumbh-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/kumbh-sans-v19-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/kumbh-sans-v19-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/kumbh-sans-v19-latin-regular.woff2") format("woff2"), url("../fonts/kumbh-sans-v19-latin-regular.woff") format("woff"), url("../fonts/kumbh-sans-v19-latin-regular.ttf") format("truetype"), url("../fonts/kumbh-sans-v19-latin-regular.svg#KumbhSans") format("svg"); /* Legacy iOS */
+}
+/* kumbh-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/kumbh-sans-v19-latin-700.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/kumbh-sans-v19-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/kumbh-sans-v19-latin-700.woff2") format("woff2"), url("../fonts/kumbh-sans-v19-latin-700.woff") format("woff"), url("../fonts/kumbh-sans-v19-latin-700.ttf") format("truetype"), url("../fonts/kumbh-sans-v19-latin-700.svg#KumbhSans") format("svg"); /* Legacy iOS */
+}
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+header .sneaker-logo {
+  object-fit: contain;
+  width: 150px;
+}
+header .header-side {
+  column-gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+header .header-side,
+header .header-nav,
+header .header-nav-list,
+header .header-nav-element {
+  display: flex;
+  height: 100%;
+}
+header .header-nav-list {
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+header .header-nav-list .header-nav-element {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+header .header-nav-list a {
+  color: hsl(220, 14%, 75%);
+  transition: color 0.3s ease;
+}
+header .header-nav-list a.active {
+  color: hsl(220, 13%, 13%);
+}
+header .header-nav-list a.active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: hsl(26, 100%, 55%);
+}
+header .header-nav-list a:hover {
+  color: hsl(220, 13%, 13%);
+}
+header .cart-button {
+  position: relative;
+  width: 25px;
+  background: none;
+  border: none;
+}
+header .cart-button img {
+  width: 100%;
+}
+header .cart-button:hover {
+  cursor: pointer;
+}
+header .cart-button .items-count {
+  position: absolute;
+  top: -9px;
+  right: -11px;
+  padding: 2px 9px;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+header .profile-avatar {
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 0px 0px hsl(26, 100%, 55%);
+  transition: box-shadow 0.3s ease;
+}
+header .profile-avatar:hover {
+  box-shadow: 0px 0px 0px 2px hsl(26, 100%, 55%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+p {
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
