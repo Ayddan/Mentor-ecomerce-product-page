@@ -148,6 +148,11 @@ header .burger-button {
 .burger-menu .close-button {
   margin-bottom: 50px;
 }
+.burger-menu .menu-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
 .burger-menu .menu-link {
   color: hsl(220, 13%, 13%);
   font-weight: bold;
