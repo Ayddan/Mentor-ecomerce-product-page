@@ -12,8 +12,7 @@ interface Props {
     handleMenuToggle: (val: boolean) => void;
 }
 
-const Header: React.FC<Props> = (props) => 
-{
+const Header: React.FC<Props> = (props) => {
     const { menuIsOpen } = props
     const [ cartIsOpen, setCart ] = useState<boolean>(false)
     const [ itemCount, setItemCount ] = useState<number>(2)
