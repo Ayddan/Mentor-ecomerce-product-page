@@ -68,7 +68,7 @@ const ProductPresentation: React.FC<Props> = (props)=> {
                         <button className={`prev-button ${prevButtonPress ? 'press' : ''}`} title="Previous image" onClick={()=> carouselPrev()} onAnimationEnd={()=> setPrevButtonPress(false)}>
                             <img src={iconPrevious} alt="Next icon" />
                         </button>
-                        <img className="product-big-image" src={`/src/assets/images/image-product-${activeImage}.jpg`} alt="Product image" />
+                        <img className="product-big-image" src={`/assets/images/image-product-${activeImage}.jpg`} alt="Product image" />
                         <button className={`next-button ${nextButtonPress ? 'press' : ''}`} title="Next image" onClick={()=> carouselNext()} onAnimationEnd={()=> setNextButtonPress(false)}>
                             <img src={iconNext} alt="Next icon" />
                         </button>
