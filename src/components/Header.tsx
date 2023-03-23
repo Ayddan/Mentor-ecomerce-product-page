@@ -20,7 +20,7 @@ interface productData{
     description: string,
     price: number,
     discount: number,
-    images: number[]
+    images: string[]
 }
   
 interface cartItem {

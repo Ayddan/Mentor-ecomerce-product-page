@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // Assets
 import iconCart from '../assets/images/icon-cart-white.svg'
@@ -6,6 +6,16 @@ import iconMinus from '../assets/images/icon-minus.svg'
 import iconPlus from '../assets/images/icon-plus.svg'
 import iconNext from '../assets/images/icon-next.svg'
 import iconPrevious from '../assets/images/icon-previous.svg'
+
+// productImage
+import productImage1 from '../assets/images/image-product-1.jpg'
+import productImage1Thumbnail from '../assets/images/image-product-1-thumbnail.jpg'
+import productImage2 from '../assets/images/image-product-2.jpg'
+import productImage2Thumbnail from '../assets/images/image-product-2-thumbnail.jpg'
+import productImage3 from '../assets/images/image-product-3.jpg'
+import productImage3Thumbnail from '../assets/images/image-product-3-thumbnail.jpg'
+import productImage4 from '../assets/images/image-product-4.jpg'
+import productImage4Thumbnail from '../assets/images/image-product-4-thumbnail.jpg'
 
 interface Props {
     addItemToCart: (productData: productData, quantity: number) => void
@@ -16,7 +26,7 @@ interface productData{
     description: string,
     price: number,
     discount: number,
-    images: number[]
+    images: string[]
 }
 
 const ProductPresentation: React.FC<Props> = (props)=> {
@@ -27,13 +37,16 @@ const ProductPresentation: React.FC<Props> = (props)=> {
     const [ productQuantity, setProductQuantity ] = useState<number>(0)
     const [ carouselIsOpen, setCarouselIsOpen ] = useState<boolean>(false)
 
+    useEffect(()=>{console.log(activeImage)},[activeImage])
+
     // To simulate real data
     const productData = {
         name: "Fall Limited Edition Sneakers",
         description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
         price: 250.00,
         discount: 50,
-        images: [1,2,3,4]
+        images: [productImage1,productImage2,productImage3,productImage4],
+        imagesThumbnails: [productImage1Thumbnail,productImage2Thumbnail,productImage3Thumbnail,productImage4Thumbnail]
     }
 
     const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max)
@@ -68,15 +81,15 @@ const ProductPresentation: React.FC<Props> = (props)=> {
                         <button className={`prev-button ${prevButtonPress ? 'press' : ''}`} title="Previous image" onClick={()=> carouselPrev()} onAnimationEnd={()=> setPrevButtonPress(false)}>
                             <img src={iconPrevious} alt="Next icon" />
                         </button>
-                        <img className="product-big-image" src={`/assets/images/image-product-${activeImage}.jpg`} alt="Product image" />
+                        <img className="product-big-image" src={productData.images[activeImage - 1]} alt="Product image" />
                         <button className={`next-button ${nextButtonPress ? 'press' : ''}`} title="Next image" onClick={()=> carouselNext()} onAnimationEnd={()=> setNextButtonPress(false)}>
                             <img src={iconNext} alt="Next icon" />
                         </button>
                     </div>
                     <ul className="product-image-thumbnails">
-                        {productData.images.map((v,i)=>(
-                            <li className={`product-image-grid-element ${activeImage == v ? 'active' : ''}`} key={i} onClick={()=> setActiveImage(v)}>
-                                <img className="product-image" src={`/src/assets/images/image-product-${v}-thumbnail.jpg`} alt="Product image" />
+                        {productData.imagesThumbnails.map((v,i)=>(
+                            <li className={`product-image-grid-element ${activeImage == productData.imagesThumbnails.indexOf(v) + 1 ? 'active' : ''}`} key={i} onClick={()=> setActiveImage(productData.imagesThumbnails.indexOf(v) + 1)}>
+                                <img className="product-image" src={productData.imagesThumbnails[i]}  alt="Product image" />
                             </li>
                         ))}
                     </ul>
@@ -84,11 +97,11 @@ const ProductPresentation: React.FC<Props> = (props)=> {
             </div>
             <div className="container">
                 <div className="product-image-grid">
-                    <img className="product-big-image" src={`/src/assets/images/image-product-${activeImage}.jpg`} alt="Product image" onClick={()=>setCarouselIsOpen(true)} />
+                    <img className="product-big-image" src={productData.images[activeImage - 1]} alt="Product image" onClick={()=>setCarouselIsOpen(true)} />
                     <ul className="product-image-thumbnails">
-                        {productData.images.map((v,i)=>(
-                            <li className={`product-image-grid-element ${activeImage == v ? 'active' : ''}`} key={i} onClick={()=> setActiveImage(v)}>
-                                <img className="product-image" src={`/src/assets/images/image-product-${v}-thumbnail.jpg`} alt="Product image" />
+                        {productData.imagesThumbnails.map((v,i)=>(
+                            <li className={`product-image-grid-element ${activeImage == productData.imagesThumbnails.indexOf(v) + 1 ? 'active' : ''}`} key={i} onClick={()=> setActiveImage(productData.imagesThumbnails.indexOf(v) + 1)}>
+                                <img className="product-image" src={v} alt="Product image" />
                             </li>
                         ))}
                     </ul>
