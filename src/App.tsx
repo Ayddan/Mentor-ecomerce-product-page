@@ -11,12 +11,12 @@ function App() {
   useEffect(()=> {console.log(cartItems)},[cartItems])
 
   const handleCartChange = (productData: object, quantity: number) => {
-    let item = cartItems.find(e => e.productData.name! == productData.name!)
+    let item = cartItems.find(e => e.productData!.name! == productData.name!)
     let itemExist = cartItems.indexOf(item!)
     if(itemExist >= 0){
       console.log(itemExist)
       let items = cartItems
-      cartItems[itemExist].quantity += quantity
+      cartItems[itemExist].quantity! += quantity
       setCartItems([...items]) 
     }else{
       setCartItems([...cartItems, {productData: productData, quantity: quantity}])
