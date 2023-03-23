@@ -11,7 +11,8 @@ function App() {
   useEffect(()=> {console.log(cartItems)},[cartItems])
 
   const handleCartChange = (productData: object, quantity: number) => {
-    let itemExist = cartItems.indexOf(cartItems.find(e => e.productData.name == productData.name))
+    let item = cartItems.find(e => e.productData.name! == productData.name!)
+    let itemExist = cartItems.indexOf(item!)
     if(itemExist >= 0){
       console.log(itemExist)
       let items = cartItems

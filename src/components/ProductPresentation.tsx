@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 // Assets
 import iconCart from '../assets/images/icon-cart-white.svg'
@@ -6,11 +6,8 @@ import iconMinus from '../assets/images/icon-minus.svg'
 import iconPlus from '../assets/images/icon-plus.svg'
 import iconNext from '../assets/images/icon-next.svg'
 import iconPrevious from '../assets/images/icon-previous.svg'
-import iconClose from '../assets/images/icon-close.svg'
 
 interface Props {
-    // carouselIsOpen: boolean;
-    // handleCarouselToggle: (val: boolean) => void;
     addItemToCart: (productData: object, quantity: number) => void
 }
 
