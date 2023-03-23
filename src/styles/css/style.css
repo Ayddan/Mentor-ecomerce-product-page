@@ -199,6 +199,11 @@ header .cart-modal a {
     left: -250px;
   }
 }
+@media screen and (max-width: 950px) {
+  header .cart-modal {
+    left: -260px;
+  }
+}
 @media screen and (max-width: 750px) {
   header .cart-modal {
     width: calc(100% - 20px);
