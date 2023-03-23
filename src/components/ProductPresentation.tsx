@@ -8,7 +8,15 @@ import iconNext from '../assets/images/icon-next.svg'
 import iconPrevious from '../assets/images/icon-previous.svg'
 
 interface Props {
-    addItemToCart: (productData: object, quantity: number) => void
+    addItemToCart: (productData: productData, quantity: number) => void
+}
+
+interface productData{
+    name: string,
+    description: string,
+    price: number,
+    discount: number,
+    images: number[]
 }
 
 const ProductPresentation: React.FC<Props> = (props)=> {
