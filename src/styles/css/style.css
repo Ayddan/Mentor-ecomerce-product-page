@@ -196,7 +196,7 @@ header .cart-modal a {
 }
 @media screen and (max-width: 1500px) {
   header .cart-modal {
-    left: -250px;
+    left: -220px;
   }
 }
 @media screen and (max-width: 950px) {
